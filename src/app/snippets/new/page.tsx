@@ -15,7 +15,6 @@ export default function SnippetCreatePage() {
         code: code,
       },
     });
-    console.log(snippet);
 
     // Redirect the user back to the root route
     redirect("/");
