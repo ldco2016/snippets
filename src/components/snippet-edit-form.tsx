@@ -15,6 +15,10 @@ export default function SnippetEditForm({ snippet }: SnippetEditFormProps) {
     setCode(value);
   };
 
+  async function editSnippet() {
+    
+  }
+
   return (
     <div>
       <Editor
