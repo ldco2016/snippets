@@ -9,9 +9,17 @@ interface SnippetEditPageProps {
 }
 
 export default async function SnippetEditPage(props: SnippetEditPageProps) {
-  const id = parseInt(props.params.id);
+  // const id = parseInt(props.params.id);
+  // const snippet = await db.snippet.findFirst({
+  //   where: { id },
+  // });
+
+  // In NextJS 15, we must await params or searchParams before accessing
+  const { id } = await props.params;
+
+  const snippetId = parseInt(id);
   const snippet = await db.snippet.findFirst({
-    where: { id },
+    where: { id: snippetId },
   });
 
   if (!snippet) {
